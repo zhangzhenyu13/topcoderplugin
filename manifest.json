@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+
+  "name": "TopcoderRS",
+  "description": "This extension for Fuyang's RS.",
+  "version": "1.0",
+
+  "permissions": [
+    "tabs",
+    "https://www.topcoder.com/challenges/*"
+  ],
+
+  "background": { "scripts": ["background.js"] },
+  
+  "browser_action": {
+		"default_icon": "topcoder.png",
+    "default_popup": "popup.html",
+    "default_title": "TopcoderRS plugin for developer"
+	},
+  
+  "content_scripts":[
+      {
+      "matches":["https://www.topcoder.com/challenges/*"],
+      "js":["content_script.js"]
+    }
+  ]
+
+}
