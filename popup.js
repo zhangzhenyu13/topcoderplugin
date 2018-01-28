@@ -38,7 +38,7 @@ function showResult(){
   var userlist=data.data;
   console.log(userlist);
   var i_rank=userlist.indexOf(current_user);
-  
+  console.log(i_rank)
   n_users=userlist.length;
 
   if(i_rank!=-1){
@@ -49,6 +49,16 @@ function showResult(){
     else if(mode==2){
       document.getElementById("ranking title").innerHTML="Your Ranking Position is";
       prank.innerHTML=i_rank+" amoung "+n_users;
+    }
+  }
+  else{
+    if(mode==1){
+      rate=0;
+      prank.innerHTML=rate;
+    }
+    else if(mode==2){
+      document.getElementById("ranking title").innerHTML="Your Ranking Position is";
+      prank.innerHTML="you are not in the list";
     }
   }
 }
