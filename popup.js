@@ -6,10 +6,10 @@ var data=null;
 var prank=document.getElementById("ranking");
 var fetching=false;
 var taskID= chrome.extension.getBackgroundPage().taskID;
-var current_user=chrome.extension.getBackgroundPage().taskID;
+var current_user=chrome.extension.getBackgroundPage().current_user;
 
 //select mode
-window.alert(url);
+
 function setmode(choice){
   if(choice!=mode){
     mode=choice;
@@ -19,7 +19,16 @@ function setmode(choice){
     showResult();
   }
 }
-
+function briefmode(){
+  mode=1;
+  if(fetching) return;
+  showResult();
+}
+function detailmode(){
+  mode=2;
+  if(fetching) return;
+  showResult();
+}
 //
 function showResult(){
   if(data.code!=200){
@@ -69,3 +78,8 @@ function setRank(){
   request.send();
   
 }
+
+document.getElementById("all").onload=setRank;
+document.getElementById("brief").onclick=briefmode;
+document.getElementById("detail").onclick=detailmode;
+prank.onclick=setRank;
