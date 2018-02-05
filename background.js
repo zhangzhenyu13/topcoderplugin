@@ -19,7 +19,13 @@ function getchallengeID(){
   var urlheader="https://www.topcoder.com/challenges/";
   var str=url.substring(urlheader.length,url.length);
   //window.alert(str);
-  taskID=Number(str.substring(0,str.indexOf("/")));
+  let pos=str.indexOf("/");
+  if(pos>-1){
+    taskID=Number(str.substring(0,str.indexOf("/")));
+  }
+  else{
+      taskID=Number(str)
+  }
 }
 //window.alert("b_1");
 chrome.runtime.onMessage.addListener(function(msg) {
