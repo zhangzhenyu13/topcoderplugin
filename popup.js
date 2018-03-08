@@ -68,7 +68,7 @@ function setRank(){
   prank.innerHTML="Loading...";
   var request=new XMLHttpRequest();
 
-  var restAPI="http://192.168.7.112/topcoder/recommend/task?taskId="+taskID;
+  var restAPI="http://192.168.7.111:8080/topcoder/recommend/task?taskId="+taskID;
 
   document.getElementById("username").value=current_user;
   document.getElementById("challengeid").value=taskID;
