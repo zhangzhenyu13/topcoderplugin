@@ -31,6 +31,7 @@ function getchallengeID(){
 chrome.runtime.onMessage.addListener(function(msg) {
     current_user=msg.username;
     url=msg.url;
+    //window.alert("Welcome, "+msg.username+"!");
     //window.alert("b_2");
     //window.alert(url);
     //console.log("url",url);
@@ -42,3 +43,6 @@ chrome.runtime.onMessage.addListener(function(msg) {
 //window.alert("b_3");
 chrome.tabs.onUpdated.addListener(checkForValidUrl);
 //window.alert("b_4");
+chrome.webNavigation.onHistoryStateUpdated.addListener(function(details) {
+    chrome.tabs.executeScript(null,{file:"content_script.js"});
+});

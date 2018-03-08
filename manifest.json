@@ -7,7 +7,8 @@
 
   "permissions": [
     "tabs",
-    "https://www.topcoder.com/challenges/*"
+    "https://www.topcoder.com/challenges/*",
+    "webNavigation"
   ],
 
   "background": { "scripts": ["background.js"] },

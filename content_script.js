@@ -7,4 +7,4 @@ var msg = {
 //window.alert(msg.url);
 chrome.runtime.sendMessage(msg);
 //window.alert("c_3");
-window.alert("Welcome, "+msg.username+"!");
+//window.alert("Welcome, "+msg.username+"!");
